@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 p-6">
-        <div className="w-full max-w-md flex gap-2">
+        <div className="w-full flex gap-2 flex-wrap">
           {array.map((item) => (
             <Link to={item.path} key={item.path}>
               <Button type={pathname === item.path ? 'primary' : 'link'} size="large">
@@ -36,7 +36,7 @@ function App() {
             </Link>
           ))}
         </div>
-        <div className='flex justify-center items-center min-h-[90vh]'>
+        <div className='flex justify-center items-center mt-10 md:min-h-[90vh]'>
           <Outlet />
         </div>
       </div>

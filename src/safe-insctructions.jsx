@@ -2,14 +2,14 @@ import React from 'react'
 
 export const SafeInsctructions = () => {
   return (
-    <div className="bg-white rounded-lg shadow-2xl p-8 max-w-4xl w-full mt-10">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">Рекомендации по Кибербезопасности</h1>
+    <div className="bg-white rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 max-w-4xl w-full mt-6 sm:mt-8 md:mt-10 mx-auto">
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">Рекомендации по Кибербезопасности</h1>
       
-      <div className="space-y-8">
+      <div className="space-y-6 sm:space-y-8">
         <section>
-          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Основные принципы безопасности</h2>
-          <div className="bg-blue-50 p-6 rounded-lg">
-            <ul className="space-y-3 text-gray-700">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-3 sm:mb-4">Основные принципы безопасности</h2>
+          <div className="bg-blue-50 p-4 sm:p-6 rounded-lg">
+            <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700">
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
                 Используйте сложные уникальные пароли для каждого аккаунта
@@ -31,9 +31,9 @@ export const SafeInsctructions = () => {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Безопасность в интернете</h2>
-          <div className="bg-green-50 p-6 rounded-lg">
-            <ul className="space-y-3 text-gray-700">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-3 sm:mb-4">Безопасность в интернете</h2>
+          <div className="bg-green-50 p-4 sm:p-6 rounded-lg">
+            <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700">
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">•</span>
                 Не открывайте подозрительные ссылки и вложения в письмах
@@ -55,9 +55,9 @@ export const SafeInsctructions = () => {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Защита данных</h2>
-          <div className="bg-purple-50 p-6 rounded-lg">
-            <ul className="space-y-3 text-gray-700">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-3 sm:mb-4">Защита данных</h2>
+          <div className="bg-purple-50 p-4 sm:p-6 rounded-lg">
+            <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700">
               <li className="flex items-start">
                 <span className="text-purple-600 mr-2">•</span>
                 Регулярно создавайте резервные копии важных данных
@@ -79,9 +79,9 @@ export const SafeInsctructions = () => {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Дополнительные рекомендации</h2>
-          <div className="bg-yellow-50 p-6 rounded-lg">
-            <ul className="space-y-3 text-gray-700">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-3 sm:mb-4">Дополнительные рекомендации</h2>
+          <div className="bg-yellow-50 p-4 sm:p-6 rounded-lg">
+            <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700">
               <li className="flex items-start">
                 <span className="text-yellow-600 mr-2">•</span>
                 Используйте менеджер паролей для хранения учетных данных

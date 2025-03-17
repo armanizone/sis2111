@@ -28,7 +28,7 @@ export const HashPassword = () => {
 
   return (
     <>
-      <div className="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full">
+      <div className="bg-white rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 max-w-2xl w-full">
         <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">Хэширование Пароля</h1>
         <p className="text-gray-600 mb-8 text-center">Введите пароль для создания безопасного хэша</p>
         

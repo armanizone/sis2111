@@ -48,15 +48,15 @@ export const ScanWebsite = () => {
     };
     
     try {
-      await axios.request(options1)
-      .then(async response => {
+      // await axios.request(options1)
+      // .then(async response => {
         await axios.request({
             ...options2, 
             data: {
               ...options2.data, 
               messages: [{
                 role: 'user', 
-                content: `Дай мне краткое описание и анализ безопасности этого веб-сайта, напиши все возможные уязвимости и их вероятность, также дай общую оценку каждому пунтку и общее оценку безопасности: ${JSON.stringify(response.data?.data)}, также предоставьте рекомендации по улучшению, в конце ответа напиши "Проверка завершена"`
+                content: `Дай мне краткое описание и анализ безопасности этого веб-сайта, напиши все возможные уязвимости и их вероятность, также дай общую оценку каждому пунтку и общее оценку безопасности: ${JSON.stringify(exampleResponse)}, также предоставьте рекомендации по улучшению, в конце ответа напиши "Проверка завершена"`
               }]
             }
           })
@@ -67,10 +67,10 @@ export const ScanWebsite = () => {
         .catch(error => {
           console.error(error);
         })
-      })
-      .catch(error => {
-        console.error(error);
-      })
+      // })
+      // .catch(error => {
+      //   console.error(error);
+      // })
 
 
     } catch (error) {
@@ -78,6 +78,8 @@ export const ScanWebsite = () => {
     }
     setLoading(false);
   }
+
+  console.log(response, 'response');
 
   return (
     <>
@@ -125,3 +127,38 @@ export const ScanWebsite = () => {
     </>
   )
 }
+
+
+const exampleResponse = {
+  "success": true,
+  "data": {
+    "status": "Malicious",
+    "message": "A link has been flagged by multiple anti-malware engines.",
+    "scan": [],
+    "finishScan": true,
+    "category": "Phishing", 
+    "sub_status": [
+      {
+        "sub_status": "Multi-Engine Links",
+        "level": 4,
+        "status": "Malicious",
+        "category": "Phishing",
+        "message": "A link has been flagged by multiple anti-malware engines.",
+        "description": "This metric indicates that a link in the email has been flagged by multiple anti-malware engines. Links flagged by multiple engines are likely to be malicious and could lead to phishing websites or other forms of cyber threats."
+      }
+    ],
+    "url": "https://vryjm.page.link/jS6a",
+    "name": "https://vryjm.page.link/jS6a",
+    "domain": "vryjm.page.link",
+    "type": "Text",
+    "malware_type": "",
+    "is_captcha": false,
+    "is_anti_bot": false,
+    "is_new_domain": false,
+    "is_top_domain": true,
+    "domain_age": "2017-02-09T00:00:00.000Z",
+    "original_url": "https://vryjm.page.link/jS6a",
+    "redirect_url": "",
+    "_id": "66c2041aa0483a893ed74dbb"
+  }
+};

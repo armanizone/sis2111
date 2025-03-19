@@ -11,33 +11,30 @@ export const InjectionsDetector = () => {
     setQueryChecked(true);
     const newErrors = [];
 
-    // Common SQL injection patterns
     const sqlInjectionPatterns = [
-      /'.*'/, // String literals
-      /;.*/, // Multiple statements
-      /--.*/, // Comments
-      /\/\*.*\*\//, // Multi-line comments
-      /UNION\s+(?:ALL\s+)?SELECT/i, // UNION-based
-      /OR\s+['"]?\w+['"]?\s*=\s*['"]?\w+['"]?/i, // OR-based boolean
-      /AND\s+['"]?\w+['"]?\s*=\s*['"]?\w+['"]?/i, // AND-based boolean
-      /EXEC\s*\(\s*xp_/i, // Extended stored procedures
-      /DROP\s+TABLE/i, // Table dropping
-      /INSERT\s+INTO/i, // Insertions
-      /UPDATE\s+\w+\s+SET/i, // Updates
-      /DELETE\s+FROM/i, // Deletions
-      /WAITFOR\s+DELAY/i, // Time-based
-      /BENCHMARK\(/i, // Performance-based
-      /SLEEP\(/i, // Time-based
+      /'.*'/,
+      /;.*/,
+      /---.*/,
+      /\/\*.*\*\//,
+      /UNION\s+(?:ALL\s+)?SELECT/i,
+      /OR\s+['"]?\w+['"]?\s*=\s*['"]?\w+['"]?/i,
+      /AND\s+['"]?\w+['"]?\s*=\s*['"]?\w+['"]?/i,
+      /EXEC\s*\(\s*xp_/i,
+      /DROP\s+TABLE/i,
+      /INSERT\s+INTO/i,
+      /UPDATE\s+\w+\s+SET/i,
+      /DELETE\s+FROM/i,
+      /WAITFOR\s+DELAY/i,
+      /BENCHMARK\(/i,
+      /SLEEP\(/i,
     ];
 
-    // Check for empty query
     if (!query.trim()) {
       newErrors.push('SQL-запрос не может быть пустым');
       setErrors(newErrors);
       return;
     }
 
-    // Check each pattern
     sqlInjectionPatterns.forEach(pattern => {
       if (pattern.test(query)) {
         switch(pattern.toString()) {
